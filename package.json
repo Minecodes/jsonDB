@@ -16,7 +16,7 @@
     "build": "tsc && babel src -d dist",
     "start": "node dist/main.js",
     "watch": "babel src -d dist --watch",
-    "ci": "ts-node tests/add.ts && ts-node tests/delete.ts && ts-node tests/reset.ts && ts-node tests/get.ts && ts-node tests/getAll.ts && ts-node tests/set.ts && ts-node tests/reset.ts"
+    "ci": "ts-node tests/reset.ts && ts-node tests/add.ts && ts-node tests/delete.ts && ts-node tests/reset.ts && ts-node tests/get.ts && ts-node tests/getAll.ts && ts-node tests/set.ts && ts-node tests/reset.ts"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
