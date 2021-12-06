@@ -1,0 +1,1 @@
+# jsonDB [![CodeFactor](https://www.codefactor.io/repository/github/minecodes/jsondb/badge?s=bc9cc0f894d6540f6238b3fe3514dbc7eaf3f6ad)](https://www.codefactor.io/repository/github/minecodes/jsondb)
