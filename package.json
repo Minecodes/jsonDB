@@ -1,0 +1,32 @@
+{
+  "name": "jsonDB",
+  "version": "1.0.0",
+  "description": "An simple database created with Typescript and a single JSON file",
+  "main": "dist/main.js",
+  "badges": [
+    "https://img.shields.io/npm/v/jsonDB.svg",
+    "https://img.shields.io/bundlephobia/minzip/jsonDB?style=for-the-badge",
+    "https://img.shields.io/github/watchers/Minecodes/jsonDB?style=for-the-badge"
+  ],
+  "repository": "https://github.com/Minecodes/jsonDB",
+  "author": "Minecodes",
+  "license": "MIT",
+  "scripts": {
+    "test": "ts-node src/main.ts",
+    "build": "tsc && babel src -d dist",
+    "start": "node dist/main.js",
+    "watch": "babel src -d dist --watch"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/node": "^16.11.11",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
+}
