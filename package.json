@@ -2,7 +2,7 @@
   "name": "jsonDB",
   "version": "1.0.0",
   "description": "An simple database created with Typescript and a single JSON file",
-  "main": "dist/main.js",
+  "main": "dist/lib/main.js",
   "badges": [
     "https://img.shields.io/npm/v/jsonDB.svg",
     "https://img.shields.io/bundlephobia/minzip/jsonDB?style=for-the-badge",
@@ -15,7 +15,8 @@
     "test": "ts-node src/main.ts",
     "build": "tsc && babel src -d dist",
     "start": "node dist/main.js",
-    "watch": "babel src -d dist --watch"
+    "watch": "babel src -d dist --watch",
+    "ci": "ts-node tests/add.ts && ts-node tests/delete.ts && ts-node tests/reset.ts && ts-node tests/get.ts && ts-node tests/getAll.ts && ts-node tests/set.ts && ts-node tests/reset.ts"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
