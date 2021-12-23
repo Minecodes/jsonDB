@@ -10,7 +10,7 @@
   ],
   "repository": "https://github.com/Minecodes/jsonDB",
   "author": "Minecodes",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "scripts": {
     "test": "ts-node src/main.ts",
     "build": "tsc && babel src -d dist",
