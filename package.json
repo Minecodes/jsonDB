@@ -1,6 +1,6 @@
 {
   "name": "jsonDB",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An simple database created with Typescript and a single JSON file",
   "main": "dist/lib/short.js",
   "badges": [
