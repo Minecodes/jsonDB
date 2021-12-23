@@ -3,6 +3,8 @@
   "version": "1.0.3",
   "description": "An simple database created with Typescript and a single JSON file",
   "main": "dist/lib/short.js",
+  "types": "dist/lib/short.d.ts",
+  "type": "commonjs",
   "files": [
     "dist/lib/short.js",
     "dist/lib/short.d.ts",
