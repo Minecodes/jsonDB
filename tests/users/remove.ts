@@ -1,6 +1,6 @@
 import jsonDB from "../../src/lib/simple";
 import { prompt } from "enquirer";
-let db = jsonDB("db/", "users.json");
+let db = new jsonDB("db/", "users.json");
 db.load();
 const q = [
     {

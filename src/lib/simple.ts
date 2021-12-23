@@ -12,93 +12,77 @@ import fs from "fs";
 import { arrayBuffer } from "stream/consumers";
 //#endregion
 
-function jsonDB(path: string, file: string) {
-    //#region private
-    const json = {
-        data: {},
-        path: path,
-        file: file
-    };
+class jsonDB {
+    private file: string;
+    private path: string;
+    private data = {};
 
-    function load(): void {
-        json.data = JSON.parse(fs.readFileSync(json.path + json.file, "utf8"));
+    constructor(path: string, file: string) {
+        this.path = path;
+        this.file = file;
+        this.load();
     }
 
-    function save(): void {
-        fs.writeFileSync(json.path + json.file, JSON.stringify(json.data));
+    load(): void {
+        this.data = JSON.parse(fs.readFileSync(this.path + this.file, "utf8"));
     }
 
-    function get(key: string): any {
-        return json.data[key];
+    save(): void {
+        fs.writeFileSync(this.path + this.file, JSON.stringify(this.data));
     }
 
-    function set(key: string, value: any): void {
-        json.data[key] = value;
-        save();
+    get(key: string): any {
+        return this.data[key];
     }
 
-    function remove(key: string): void {
-        delete json.data[key];
-        save();
+    set(key: string, value: any): void {
+        this.data[key] = value;
+        this.save();
     }
 
-    function clear(): void {
-        json.data = {};
-        save();
+    remove(key: string): void {
+        delete this.data[key];
+        this.save();
+    }
+
+    clear(): void {
+        this.data = {};
+        this.save();
     }
     
-    function keys(): string[] {
-        return Object.keys(json.data);
+    keys(): string[] {
+        return Object.keys(this.data);
     }
     
-    function values(): any[] {
-        return Object.values(json.data);
+    values(): any[] {
+        return Object.values(this.data);
     }
 
-    function has(key: string): boolean {
-        return json.data.hasOwnProperty(key);
+    has(key: string): boolean {
+        return this.data.hasOwnProperty(key);
     }
 
-    function size(): number {
-        return Object.keys(json.data).length;
+    size(): number {
+        return Object.keys(this.data).length;
     }
 
-    function addArray(key: string, value: any): void {
-        if (!json.data[key]) json.data[key] = [];
-        json.data[key].push(value);
-        save();
+    addArray(key: string, value: any): void {
+        if (!this.data[key]) this.data[key] = [];
+        this.data[key].push(value);
+        this.save();
     }
 
-    function removeArray(key: string, value: any): void {
-        if (!json.data[key]) return;
-        json.data[key].splice(json.data[key].indexOf(value), 1);
-        save();
+    removeArray(key: string, value: any): void {
+        if (!this.data[key]) return;
+        this.data[key].splice(this.data[key].indexOf(value), 1);
+        this.save();
     }
     
-    function removeArrayItem(key: string, index: number): void {
-        if (!json.data[key]) return;
-        json.data[key].splice(index, 1);
-        save();
+    removeArrayItem(key: string, index: number): void {
+        if (!this.data[key]) return;
+        this.data[key].splice(index, 1);
+        this.save();
     }
-    //#endregion
-
-    //#region public
-    return {
-        load: load,
-        save: save,
-        get: get,
-        set: set,
-        remove: remove,
-        clear: clear,
-        keys: keys,
-        values: values,
-        has: has,
-        size: size,
-        addArray: addArray,
-        removeArray: removeArray,
-        removeArrayItem: removeArrayItem
-    };
-    //#endregion
 }
 
 export default jsonDB;
