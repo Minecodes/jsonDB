@@ -26,7 +26,7 @@
     "ci": "ts-node tests/reset.ts && ts-node tests/add.ts && ts-node tests/delete.ts && ts-node tests/reset.ts && ts-node tests/get.ts && ts-node tests/getAll.ts && ts-node tests/set.ts && ts-node tests/reset.ts"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.7",
+    "@babel/cli": "^7.17.0",
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-typescript": "^7.16.5",
